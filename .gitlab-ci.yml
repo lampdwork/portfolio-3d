@@ -1,3 +1,6 @@
+variables:
+  GITHUB_TARGET_REPOSITORY: portfolio-3d
+
 stages:
   - deploy
 
@@ -5,8 +8,9 @@ deploy:
   stage: deploy
   only:
     - branches
-    - tags
   script:
+    - git config --global user.email "gitlab-ci@example.com"
+    - git config --global user.name "GitLab CI/CD"
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
-    - git push -f origin HEAD:main
+    - git push --all --tags --force

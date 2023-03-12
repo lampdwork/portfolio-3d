@@ -9,7 +9,7 @@ deploy-main:
     - git config --global user.email "lampd.work@gmail.com"
     - git config --global user.name "lampd"
     - git checkout -B main
-    - git remote set-url --push origin \
+    - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
     - git push -u origin main
 
@@ -21,6 +21,6 @@ deploy-develop:
     - git config --global user.email "lampd.work@gmail.com"
     - git config --global user.name "lampd"
     - git checkout -B develop
-    - git remote set-url --push origin \
+    - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
     - git push origin develop

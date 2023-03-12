@@ -9,8 +9,8 @@ deploy:
   only:
     - branches
   script:
-    - git config --global user.email "gitlab-ci@example.com"
-    - git config --global user.name "GitLab CI/CD"
+    - git config --global user.email "lampd.work@gmail.com"
+    - git config --global user.name "lampd"
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
     - git push --all --tags --force

@@ -4,5 +4,5 @@ stages:
 deploy:
   stage: deploy
   script:
-    - git push --all
+    - git push --mirror
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git

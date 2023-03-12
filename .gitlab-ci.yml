@@ -1,6 +1,3 @@
-variables:
-  GITHUB_TARGET_REPOSITORY: portfolio-3d
-
 stages:
   - deploy
 
@@ -13,4 +10,4 @@ deploy:
     - git config --global user.name "lampd"
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
-    - git push -f origin main
+    - git push --all --force

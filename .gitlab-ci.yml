@@ -4,7 +4,8 @@ stages:
 deploy:
   stage: deploy
   only:
-    - branches
+    - main
+    - develop
   script:
     - git config --global user.email "lampd.work@gmail.com"
     - git config --global user.name "lampd"

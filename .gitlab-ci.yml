@@ -4,13 +4,14 @@ stages:
 deploy:
   stage: deploy
   only:
-    - branches
+    - main
+    - develop
   script:
     - git config --global user.email "lampd.work@gmail.com"
     - git config --global user.name "lampd"
+    - git checkout -B main
+    - git checkout -B develop
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
-    - git checkout main
-    - git push -f origin main
-    - git checkout develop
-    - git push -f origin develop
+    - git push -u origin main
+    - git push origin develop

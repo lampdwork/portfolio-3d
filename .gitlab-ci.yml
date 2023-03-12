@@ -1,9 +1,20 @@
-stages:
-  - deploy
-
 deploy:
   stage: deploy
+  only:
+    - branches
+  except:
+    - main
   script:
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
     - git push --mirror --force
+  allow_failure: true
+
+deploy-main:
+  stage: deploy
+  only:
+    - main
+  script:
+    - git remote set-url --push origin
+      https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
+    - git push --force origin HEAD:refs/heads/main

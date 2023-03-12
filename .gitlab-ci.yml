@@ -9,5 +9,4 @@ deploy:
   script:
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
-    - git checkout main
-    - git push main
+    - git push -f origin HEAD:main

@@ -11,7 +11,7 @@ deploy-main:
     - git checkout -B main
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
-    - git push -u origin main
+    - git push -u -f origin main
 
 deploy-develop:
   stage: deploy
@@ -23,4 +23,4 @@ deploy-develop:
     - git checkout -B develop
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
-    - git push origin develop
+    - git push -u -f origin develop

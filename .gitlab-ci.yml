@@ -11,6 +11,5 @@ deploy:
     - git remote set-url --push origin
       https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${GITHUB_TARGET_REPOSITORY}.git
     - git checkout main
-    - git push -f origin main
-    - git checkout develop
-    - git push -f origin develop
+    - git push -u origin main
+    - git push
